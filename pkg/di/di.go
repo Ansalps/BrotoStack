@@ -1,10 +1,10 @@
 package di
 
 import (
-	"github.com/Ansalps/BrotoStack/db"
-	"github.com/Ansalps/BrotoStack/handler"
-	"github.com/Ansalps/BrotoStack/repo"
-	"github.com/Ansalps/BrotoStack/service"
+	"github.com/Ansalps/BrotoStack/pkg/db"
+	"github.com/Ansalps/BrotoStack/pkg/handler"
+	"github.com/Ansalps/BrotoStack/pkg/repo"
+	"github.com/Ansalps/BrotoStack/pkg/service"
 )
 
 func DependencyInjection() *handler.UserHandler {

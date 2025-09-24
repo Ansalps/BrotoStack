@@ -1,6 +1,6 @@
 package service
 
-import "github.com/Ansalps/BrotoStack/repo"
+import "github.com/Ansalps/BrotoStack/pkg/repo"
 
 type UserService struct{
 	Service *repo.Repo

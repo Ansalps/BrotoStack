@@ -1,7 +1,7 @@
 package handler
 
 import (
-	"github.com/Ansalps/BrotoStack/service"
+	"github.com/Ansalps/BrotoStack/pkg/service"
 	"github.com/gin-gonic/gin"
 )
  type UserHandler struct{

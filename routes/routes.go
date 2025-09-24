@@ -1,7 +1,7 @@
 package routes
 
 import (
-	"github.com/Ansalps/BrotoStack/di"
+	"github.com/Ansalps/BrotoStack/pkg/di"
 	"github.com/gin-gonic/gin"
 )
 

@@ -1,7 +1,7 @@
 package main
 
 import (
-	"github.com/Ansalps/BrotoStack/db"
+	"github.com/Ansalps/BrotoStack/pkg/db"
 	"github.com/Ansalps/BrotoStack/routes"
 	"github.com/gin-gonic/gin"
 )
