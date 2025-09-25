@@ -1,17 +1,20 @@
 package main
 
 import (
-	"github.com/Ansalps/BrotoStack/pkg/db"
+	"log"
+
 	"github.com/Ansalps/BrotoStack/routes"
 	"github.com/gin-gonic/gin"
+	"github.com/joho/godotenv"
 )
 
-func init(){
-	db.ConnectToDb()
-}
-
 func main() {
-	router:=gin.Default()
+	err := godotenv.Load(".env")
+
+	if err != nil {
+		log.Fatalf("Error loading .env file")
+	}
+	router := gin.Default()
 	routes.RegisterRoutes(router)
 	router.Run(":8080")
 }

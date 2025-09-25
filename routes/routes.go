@@ -7,5 +7,5 @@ import (
 
 func RegisterRoutes(router *gin.Engine) {
 	handler := di.DependencyInjection()
-	router.GET("/", handler.SignUp)
+	router.POST("/signup", handler.SignUp)
 }
