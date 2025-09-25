@@ -40,7 +40,7 @@ func Validate(s any) error{
 				return fmt.Errorf("The field '%s' should only include alphabets,numbers,underscore or periods ", validationErr.Field())
 			case "startsnotwith":
 				return fmt.Errorf("The field '%s' should not start with '%s' ", validationErr.Field(),validationErr.Param())
-			case "endsnotwith=.":
+			case "endsnotwith":
 				return fmt.Errorf("The field '%s' should not end with '%s' ", validationErr.Field(),validationErr.Param())
 			case "noRepeatedPeriods":
 				return fmt.Errorf("The field '%s' should not have repeated '%s' ", validationErr.Field(),validationErr.Param())
