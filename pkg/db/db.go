@@ -2,7 +2,6 @@ package db
 
 import (
 	"log"
-	"os"
 
 	"github.com/Ansalps/BrotoStack/pkg/models"
 	"gorm.io/driver/postgres"
