@@ -32,9 +32,9 @@ func Validate(s any) error{
 			switch validationErr.Tag() {
 			case "required":
 				return fmt.Errorf("The field '%s' is required ", validationErr.Field())
-			case "min=1":
+			case "min":
 				return fmt.Errorf("The field '%s' should have a minimum length of '%s' ", validationErr.Field(),validationErr.Param())
-			case "max=30":
+			case "max":
 				return fmt.Errorf("The field '%s' should only have a maximum length of '%s' ", validationErr.Field(),validationErr.Param())
 			case "usernamRegex":
 				return fmt.Errorf("The field '%s' should only include alphabets,numbers,underscore or periods ", validationErr.Field())
