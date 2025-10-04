@@ -48,7 +48,8 @@ func Validate(s any) error{
 				return fmt.Errorf("The field '%s' is not a valid email ", validationErr.Field())
 			case "eqfield":
 				return fmt.Errorf("The field '%s' should be same as '%s' field ", validationErr.Field(),validationErr.Param())
-			
+			case "oneof":
+				return fmt.Errorf("The field '%s' shoulbe equalt to either of '%s field",validationErr.Field(),validationErr.Param())
 			default:
 				// Default error message for other validation failures
 				fmt.Printf("Validation failed for '%s': %s\n", validationErr.Field(), validationErr.Error())

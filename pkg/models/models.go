@@ -4,28 +4,21 @@ import (
 	"gorm.io/gorm"
 )
 
-// type Admins struct{
-// 	id uint
-// 	username string
-// 	email string
-// 	passwordHash string
-// 	created_at string
-// 	updated_at string
-// 	deleted_at string
-// }
-// type Otps struct{
-// 	id uint
-// 	role string
-// 	data string
-// 	created_at string
-// 	updated_at string
-// 	deleted_at string
-// 	is_used bool
-// }
+type Admins struct{
+	gorm.Model
+	Email string	`gorm:"type:varchar(30);unique"`
+	PasswordHash string `gorm:"type:varchar"`
+}
+type Otps struct{
+	gorm.Model
+	Email string `gorm:"type:varchar(30);unique"`
+	Data string
+	Is_Valid bool `gorm:"type:bool;default:true"`
+}
 type Users struct{
 	gorm.Model		
-	Username string `gorm:"type:varchar(30)"`
-	Email string	`gorm:"type:varchar(30)"`
+	Username string `gorm:"type:varchar(30);unique"`
+	Email string	`gorm:"type:varchar(30);unique"`
 	PasswordHash string `gorm:"type:varchar"`
 	IsVerified bool	`gorm:"type:bool;default:false"`
 }

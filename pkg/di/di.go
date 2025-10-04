@@ -7,10 +7,14 @@ import (
 	"github.com/Ansalps/BrotoStack/pkg/service"
 )
 
-func DependencyInjection() *handler.UserHandler {
+func DependencyInjection() (*handler.AdminHandler,*handler.UserHandler) {
 	db := db.ConnectToDb()
-	repo := repo.NewUserRepo(db)
-	service := service.NewUserService(repo)
-	handler := handler.NewUserHandler(service)
-	return handler
+	userRepo := repo.NewUserRepo(db)
+	userService := service.NewUserService(userRepo)
+	userHandler := handler.NewUserHandler(userService)
+
+	adminRepo:=repo.NewAdminReop(db)
+	adminService:=service.NewAdminService(adminRepo)
+	adminHandler:=handler.NewAdminHanlder(adminService)
+	return adminHandler,userHandler
 }
