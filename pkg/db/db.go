@@ -18,6 +18,7 @@ func ConnectToDb() *gorm.DB {
 	// connStr := "user=" + os.Getenv("db_user") + " host=" + os.Getenv("db_host") + " password=" + os.Getenv("db_password") +
 	// 	" dbname=" + os.Getenv("db_name") + " port=" + os.Getenv("db_port") + " sslmode=disable"
 	connStr := os.Getenv("db_url")
+	fmt.Println("hi hi hi",connStr)
 	db, err := gorm.Open(postgres.Open(connStr), &gorm.Config{})
 	if err != nil {
 		log.Fatal(err)
